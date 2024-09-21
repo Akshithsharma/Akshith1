@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMinds - Videos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="content">
+        <h1>Stress Relief Videos</h1>
+        <video width="320" height="240" controls>
+            <source src="stress_relief.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- More stress relief videos can be added here -->
+
+        <h2>Feedback for Stress Relief Videos</h2>
+        <form id="stressFeedbackForm">
+            <label for="stressFeedback">How do you feel after watching the stress relief video?</label>
+            <textarea id="stressFeedback" name="feedback" required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+
+        <div id="contentVideos" style="display:none;">
+            <h1>Class-Specific Videos</h1>
+            <video width="320" height="240" controls>
+                <source src="class_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- More class-specific videos can be added here -->
+
+            <h2>Feedback for Class Videos</h2>
+            <form id="contentFeedbackForm">
+                <label for="contentFeedback">How was the content of the class videos?</label>
+                <textarea id="contentFeedback" name="feedback" required></textarea>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Show content videos after stress relief feedback
+        document.getElementById('stressFeedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('contentVideos').style.display = 'block'; // Show content videos
+            alert('Thank you for your feedback! Now you can watch the class-specific videos.');
+        });
+
+        // Redirect to quiz page after content feedback
+        document.getElementById('contentFeedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for your feedback! Now, you will proceed to the quiz.');
+            window.location.href = 'quiz.html'; // Redirect to the quiz page
+        });
+    </script>
+</body>
+</html>

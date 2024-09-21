@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMinds - Quiz</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="content">
+        <h1>Quiz</h1>
+        <form id="quizForm">
+            <ol>
+                <li>
+                    <label>Question 1:</label>
+                    <input type="text" name="q1" required>
+                </li>
+                <li>
+                    <label>Question 2:</label>
+                    <input type="text" name="q2" required>
+                </li>
+                <li>
+                    <label>Question 3:</label>
+                    <input type="text" name="q3" required>
+                </li>
+                <li>
+                    <label>Question 4:</label>
+                    <input type="text" name="q4" required>
+                </li>
+                <li>
+                    <label>Question 5:</label>
+                    <input type="text" name="q5" required>
+                </li>
+                <li>
+                    <label>Question 6:</label>
+                    <input type="text" name="q6" required>
+                </li>
+                <li>
+                    <label>Question 7:</label>
+                    <input type="text" name="q7" required>
+                </li>
+                <li>
+                    <label>Question 8:</label>
+                    <input type="text" name="q8" required>
+                </li>
+                <li>
+                    <label>Question 9:</label>
+                    <input type="text" name="q9" required>
+                </li>
+                <li>
+                    <label>Question 10:</label>
+                    <input type="text" name="q10" required>
+                </li>
+            </ol>
+            <button type="submit">Submit Quiz</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let score = 0;
+
+            // Sample answers (replace with actual logic)
+            const answers = {
+                q1: 'answer1',
+                q2: 'answer2',
+                q3: 'answer3',
+                q4: 'answer4',
+                q5: 'answer5',
+                q6: 'answer6',
+                q7: 'answer7',
+                q8: 'answer8',
+                q9: 'answer9',
+                q10: 'answer10'
+            };
+
+            // Calculate score
+            for (let i = 1; i <= 10; i++) {
+                const userAnswer = document.querySelector(`input[name="q${i}"]`).value.trim().toLowerCase();
+                if (userAnswer === answers[`q${i}`]) {
+                    score += 2;
+                }
+            }
+
+            alert(`Your score is: ${score}/20`);
+            window.location.href = 'home.html'; // Redirect to home page or another page after quiz
+        });
+    </script>
+</body>
+</html>
